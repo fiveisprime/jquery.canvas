@@ -208,6 +208,17 @@
 
   /* Plugin definition
    * ------------------------------ */
+   
+  /**
+   * This plugin augments John Resig's JavaScript library.
+   * @namespace jQuery
+   */
+   
+  /**
+   * Plugin for handling common tasks with the HTML5 canvas element.
+   * @class
+   * @name jQuery#canvas
+   */
   $.fn.canvas = function(option) {
     return this.each(function() {
       var $this = $(this)
@@ -222,6 +233,18 @@
     });
   };
   
+  /**
+   * Default options for the canvas plugin.
+   * @name jQuery#canvas.options
+   * @default
+   * {
+   *     alpha: 1
+   *   , shadowBlur: 0
+   *   , shadowColor: 'gray'
+   *   , shadowOffsetX: 0
+   *   , shadowOffsetY: 0
+   * }
+   */
   $.fn.canvas.defaults = {
       alpha: 1
     , shadowBlur: 0
