@@ -20,7 +20,9 @@ canvas.addSquare({ x: 5, y: 5 }, 10, 'red', 1, 'black');
 ```
 
 ## Documentation
-_(Coming soon)_
+jsDoc documentation is available [here](http://fiveisprime.github.com/jquery.canvas/docs/Canvas.html).
+
+_Generated using jsdoc 3 (and it's super awesome)_
 
 ## Examples
 _(Coming soon)_
