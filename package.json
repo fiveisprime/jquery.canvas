@@ -1,0 +1,33 @@
+{
+  "name": "jquery.canvas",
+  "title": "jQuery Canvas",
+  "description": "Plugin for handling common tasks with the HTML5 canvas element.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/fiveisprime/jquery.canvas",
+  "author": {
+    "name": "Matt Hernandez",
+    "email": "matt@eventargs.com",
+    "url": "http://eventargs.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fiveisprime/jquery.canvas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fiveisprime/jquery.canvas/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/fiveisprime/jquery.canvas/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "GPL",
+      "url": "https://github.com/fiveisprime/jquery.canvas/blob/master/LICENSE-GPL"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.5"
+  },
+  "keywords": []
+}
