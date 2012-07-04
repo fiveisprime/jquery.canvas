@@ -1,6 +1,8 @@
-/*! jQuery Canvas - v0.1.0 - 2012-07-04
-* https://github.com/fiveisprime/jquery.canvas
-* Copyright (c) 2012 Matt Hernandez; Licensed MIT, GPL */
+/*!
+ * jQuery Canvas - v0.1.0 - 2012-07-04
+ * https://github.com/fiveisprime/jquery.canvas
+ * Copyright (c) 2012 Matt Hernandez; Licensed MIT, GPL
+ */
 
 (function($, window) {
   'use strict';
