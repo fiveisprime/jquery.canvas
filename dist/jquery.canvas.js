@@ -1,4 +1,4 @@
-/*! jQuery Canvas - v0.1.0 - 2012-07-03
+/*! jQuery Canvas - v0.1.0 - 2012-07-04
 * https://github.com/fiveisprime/jquery.canvas
 * Copyright (c) 2012 Matt Hernandez; Licensed MIT, GPL */
 
@@ -127,6 +127,35 @@
         this.context.stroke();
         
         return this;
+      }
+      /**
+       * Adds a triangle with the specified size and color to the canvas area.
+       * @param {object} pos The position to place the triangle within the canvas area.
+       * @param {object/number} size The size of the triangle to add. Accepts a number or
+       * and object containing width and width values.
+       * @param {string} color The color of the triangle.
+       * @param {number} lineWidth The width of the outline for the triangle.
+       * @param {string} strokeStyle The color of the stroke (outline).
+       *
+       * @example
+       * $.canvas().addTriangle({x: 5, y: 5}, 20, 'blue', 2, 'black');
+       * $.canvas().addTriangle({x: 5, y: 5}, { height: 20, width: 10 }, 'blue', 2, 'black');
+       *
+       * @method
+       * @name jQuery.canvas.Canvas#addTriangle
+       */
+    , addTriangle: function(pos, size, color, lineWidth, strokeStyle) {
+        if (typeof size === 'number') { size = { height: size, width: size }; }
+        this.context.beginPath();
+        this.context.moveTo(pos.x, pos.y);
+        this.context.lineTo(pos.x + size.width / 2, pos.y + size.height);
+        this.context.lineTo(pos.x - size.width / 2, pos.y + size.height);
+        this.context.closePath();
+        this.context.fillStyle = color || 'cyan';
+        this.context.fill();
+        this.context.lineWidth = lineWidth || 2;
+        this.context.strokeStyle = strokeStyle || 'black';
+        this.context.stroke();
       }
       /**
        * This function is called on each frame and calls the anim function.

@@ -33,15 +33,27 @@
     strictEqual(this.elems.canvas(), this.elems, 'should be chaninable');
   });
   
-  test('functions are accessible', 6, function() {
+  test('functions are accessible', 7, function() {
     var data = this.elems.canvas().data('canvas');
     
-    strictEqual(typeof data.addSquare, 'function', 'add square function should be available');
-    strictEqual(typeof data.addCircle, 'function', 'add circle function should be available');
-    strictEqual(typeof data.clear,     'function', 'clear function should be available');
-    strictEqual(typeof data.setAnim,   'function', 'set animation function should be available');
-    strictEqual(typeof data.startAnim, 'function', 'start animation function should be available');
-    strictEqual(typeof data.stopAnim,  'function', 'stop animation function should be available');
+    strictEqual(typeof data.addSquare,   'function', 'add square function should be available');
+    strictEqual(typeof data.addCircle,   'function', 'add circle function should be available');
+    strictEqual(typeof data.addTriangle, 'function', 'add triangle function should be available');
+    strictEqual(typeof data.clear,       'function', 'clear function should be available');
+    strictEqual(typeof data.setAnim,     'function', 'set animation function should be available');
+    strictEqual(typeof data.startAnim,   'function', 'start animation function should be available');
+    strictEqual(typeof data.stopAnim,    'function', 'stop animation function should be available');
+  });
+
+  test('animation starts and stops', 3, function() {
+    var data = this.elems.canvas().data('canvas');
+    data.setAnim(function() { });
+
+    strictEqual(data.animating, false, 'should not be animating');
+    data.startAnim();
+    strictEqual(data.animating, true, 'should start animating');
+    data.stopAnim();
+    strictEqual(data.animating, false, 'should stop animating');
   });
   
   module('jQuery.canvas');
