@@ -25,7 +25,7 @@ Class documentation is available [here](http://fiveisprime.github.com/jquery.can
 _Generated using [JSDoc 3](https://github.com/jsdoc3/jsdoc) because it's super awesome_
 
 ## Examples
-A working example is [here](http://fiveisprime.github.com/jquery.canvas).
+Working examples are [here](http://fiveisprime.github.com/jquery.canvas) and [here](http://fiveisprime.github.com/jquery.canvas/fixed-anim.html).
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).
