@@ -1,5 +1,5 @@
 /*!
- * jQuery Canvas - v0.1.0 - 2012-07-04
+ * jQuery Canvas - v0.1.0 - 2012-07-24
  * https://github.com/fiveisprime/jquery.canvas
  * Copyright (c) 2012 Matt Hernandez; Licensed MIT, GPL
  */
@@ -28,7 +28,6 @@
      * @name jQuery.canvas.Canvas#context
      */
     this.context = this.canvas.getContext('2d');
-    
     
     /**
      * Value indicating whether this canvas is animating.

@@ -31,7 +31,6 @@
      */
     this.context = this.canvas.getContext('2d');
     
-    
     /**
      * Value indicating whether this canvas is animating.
      * @name jQuery.canvas.Canvas#animating
