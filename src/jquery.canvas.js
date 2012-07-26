@@ -6,7 +6,7 @@
  * Licensed under the MIT, GPL licenses.
  */
 
-(function($, window) {
+!function($, window) {
   'use strict';
   
   /**
@@ -282,4 +282,4 @@
   
   $.fn.canvas.constructor = Canvas;
 
-}(jQuery, window));
+}(jQuery, window);
