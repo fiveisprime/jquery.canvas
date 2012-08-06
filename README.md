@@ -1,4 +1,4 @@
-# jQuery Canvas
+## Overview
 
 Plugin for handling common tasks with the HTML5 canvas element.
 
@@ -10,19 +10,18 @@ Download the [production version][min] or the [development version][max].
 
 In your web page:
 
-```html
-<script src="jquery.js"></script>
-<script src="dist/jquery.canvas.min.js"></script>
-<script>
-var canvas = $('#my-canvas').canvas().data('canvas');
-canvas.addSquare({ x: 5, y: 5 }, 10, 'red', 1, 'black');
-</script>
-```
+    <script src="jquery.js"></script>
+    <script src="dist/jquery.canvas.min.js"></script>
+    <script>
+      var canvas = $('#my-canvas').canvas().data('canvas');
+      canvas.addSquare({ x: 5, y: 5 }, 10, 'red', 1, 'black');
+    </script>
+
 
 ## Documentation
 Class documentation is available [here](http://fiveisprime.github.com/jquery.canvas/docs/).
 
-_Generated using [JSDoc 3](https://github.com/jsdoc3/jsdoc) because it's super awesome_
+_Generated using [docco-husky](https://github.com/mbrevoort/docco-husky) because it's super awesome_
 
 ## Examples
 Working examples are [here](http://fiveisprime.github.com/jquery.canvas) and [here](http://fiveisprime.github.com/jquery.canvas/fixed-anim.html).
