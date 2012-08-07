@@ -1,10 +1,10 @@
 /*!
- * jQuery Canvas - v0.1.0 - 2012-07-24
+ * jQuery Canvas - v0.1.0 - 2012-08-07
  * https://github.com/fiveisprime/jquery.canvas
  * Copyright (c) 2012 Matt Hernandez; Licensed MIT, GPL
  */
 
-(function($, window) {
+!function($, window) {
   'use strict';
   
   /**
@@ -14,36 +14,30 @@
    * @param {object} options The options object for setting up this canvas.
    *
    * @constructor
-   * @name jQuery.canvas.Canvas
    */
   var Canvas = function(element, options) {
     /**
      * The canvas HTML element.
-     * @name jQuery.canvas.Canvas#canvas
      */
     this.canvas = element;
     
     /**
      * The 2D context for this canvas.
-     * @name jQuery.canvas.Canvas#context
      */
     this.context = this.canvas.getContext('2d');
     
     /**
      * Value indicating whether this canvas is animating.
-     * @name jQuery.canvas.Canvas#animating
      */
     this.animating = false;
     
     /**
      * The width of the canvas area.
-     * @name jQuery.canvas.Canvas#width
      */
     this.width = this.canvas.width;
     
     /**
      * The height of the canvas area.
-     * @name jQuery.canvas.Canvas#height
      */
     this.height = this.canvas.height;
     
@@ -54,7 +48,7 @@
     this._frame        = 0;
     this._options      = options;
     
-    /* Global configuration
+    /* Global canvas configuration
      * ------------------------------ */
     
     this.context.globalAlpha   = this._options.alpha;
@@ -86,9 +80,6 @@
        * @param {string} strokeStyle The color of the stroke (outline).
        *
        * @example $.canvas().addCircle({x: 5, y: 5}, 20, 'purple', 2, 'black');
-       *
-       * @method
-       * @name jQuery.canvas.Canvas#addCircle
        */
       addCircle: function(pos, size, color, lineWidth, strokeStyle) {
         this.context.beginPath();
@@ -113,9 +104,6 @@
        * @example
        * $.canvas().addSquare({x: 5, y: 5}, 20, 'purple', 2, 'black');
        * $.canvas().addSquare({x: 5, y: 5}, { height: 20, width: 10 }, 'purple', 2, 'black');
-       *
-       * @method
-       * @name jQuery.canvas.Canvas#addSquare
        */
     , addSquare: function(pos, size, color, lineWidth, strokeStyle) {
         if (typeof size === 'number') { size = { height: size, width: size }; }
@@ -141,9 +129,6 @@
        * @example
        * $.canvas().addTriangle({x: 5, y: 5}, 20, 'blue', 2, 'black');
        * $.canvas().addTriangle({x: 5, y: 5}, { height: 20, width: 10 }, 'blue', 2, 'black');
-       *
-       * @method
-       * @name jQuery.canvas.Canvas#addTriangle
        */
     , addTriangle: function(pos, size, color, lineWidth, strokeStyle) {
         if (typeof size === 'number') { size = { height: size, width: size }; }
@@ -160,9 +145,6 @@
       }
       /**
        * This function is called on each frame and calls the anim function.
-       * @method
-       * @private
-       * @name jQuery.canvas.Canvas#animationLoop
        */
     , animationLoop: function() {
         var that = this
@@ -185,9 +167,6 @@
        * Sets the animation function that will be called for each animation
        * cycle.
        * @param {function} func The animation function.
-       *
-       * @method
-       * @name jQuery.canvas.Canvas#setAnim
        */
     , setAnim: function(func) {
         this.anim = func;
@@ -195,9 +174,6 @@
       }
       /**
        * Clears the canvas area.
-       *
-       * @method
-       * @name Canvas#clear
        */
     , clear: function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -206,25 +182,18 @@
       /**
        * Starts the animation loop which runs the animation function on each
        * frame.
-       *
-       * @method
-       * @name jQuery.canvas.Canvas#startAnim
        */
     , startAnim: function() {
         this.animating = true;
         this.startTime = new Date().getTime();
         this.lastTime = this.startTime;
       
-        // Update the anim then start the animation loop.
         this.anim && this.anim();
         this.animationLoop();
         return this;
       }
       /**
        * Stops the animation loop.
-       *
-       * @method
-       * @name jQuery.canvas.Canvas#stopAnim
        */
     , stopAnim: function() {
       this.animating = false;
@@ -236,13 +205,7 @@
    * ------------------------------ */
    
   /**
-   * This plugin augments John Resig's JavaScript library.
-   * @namespace jQuery
-   */
-   
-  /**
    * Plugin for handling common tasks with the HTML5 canvas element.
-   * @namespace jQuery.canvas
    */
   $.fn.canvas = function(option) {
     return this.each(function() {
@@ -260,15 +223,6 @@
   
   /**
    * Default options for the canvas plugin.
-   * @name jQuery.canvas#options
-   * @default
-   * {
-   *     alpha: 1
-   *   , shadowBlur: 0
-   *   , shadowColor: 'gray'
-   *   , shadowOffsetX: 0
-   *   , shadowOffsetY: 0
-   * }
    */
   $.fn.canvas.defaults = {
       alpha: 1
@@ -280,4 +234,4 @@
   
   $.fn.canvas.constructor = Canvas;
 
-}(jQuery, window));
+}(jQuery, window);
