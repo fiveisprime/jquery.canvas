@@ -29,5 +29,10 @@
   "dependencies": {
     "jquery": "~1.5"
   },
+  "docco_husky": {
+    "output_dir": "docs",
+    "project_name": "jQuery Canvas",
+    "show_timestamp": false
+  },
   "keywords": ["canvas", "jquery"]
 }
